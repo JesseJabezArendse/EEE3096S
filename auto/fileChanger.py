@@ -14,7 +14,7 @@ optimization_flags = [
 commands = [
 "make",
 "make threaded",
-"make run"
+"make run",
 "make run_threaded"
 ]
 
