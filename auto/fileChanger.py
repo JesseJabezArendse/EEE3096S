@@ -12,22 +12,26 @@ optimization_flags = [
 ]
 
 commands = [
-"make"
+"make",
+"make threaded",
+"make run"
+"make run_threaded"
 ]
 
-currentfileString = "/home/jessejabezarendse/Desktop/Automation test/makefile original.mak"
+currentfileString = "makefile original.mak"
 currentfile = open(currentfileString)
 currentLines = currentfile.readlines()
 
 
 
 for flag in optimization_flags:
-    outfile = open("/home/jessejabezarendse/Desktop/Automation test/makefile","w")
+    outfile = open("makefile","w")
     
+    print("********************************")
     print("current flag = ",flag)
     
     for line in currentLines:
-        line = line.replace("    ","\t")
+  #      line = line.replace("    ","\t")
         line = line.replace("$(CFLAGS)","$(CFLAGS) "+flag)
         outfile.write(line)
 
